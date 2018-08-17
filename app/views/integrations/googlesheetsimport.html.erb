@@ -1,0 +1,24 @@
+<h1>Import Google Sheet</h1>
+<p>Find me in app/views/integrations/googlesheetsimport.html.erb</p>
+<%= params[:code] %>
+Choose Google Sheet
+
+<%= form_for :sheet, url: integrations_specificsheetimport_path, :remote => true do |f| %> <%# Or I could do form_For @globalvar %>
+	<%= collection_select('sheet', 'id', @files_aggregated, :first, :last) %>
+  <%#= f.text_area :testing %>
+  <%= f.hidden_field :code, value: params[:code] %>
+	<%= f.submit %>
+<% end %>
+
+
+
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div id= "render-container"> 
+    </div>
+  </div>
+</div>
